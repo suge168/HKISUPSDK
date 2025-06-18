@@ -1,6 +1,0 @@
-<?xml version: "1.0" encoding="UTF-8"?>
-<Time>
-    <timeMode>manual</timeMode>
-    <localTime>${localTime}</localTime>
-    <timeZone>CST-8:00:00</timeZone>
-</Time>

@@ -1,8 +1,0 @@
-{
-  "AcsEventTotalNumCond": {
-    "major": 0,
-    "minor": 0,
-    "startTime":"${startTime}",
-    "endTime":"${endTime}"
-  }
-}

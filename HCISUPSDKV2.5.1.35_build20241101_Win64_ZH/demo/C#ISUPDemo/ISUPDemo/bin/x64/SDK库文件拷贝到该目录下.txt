@@ -1,5 +1,0 @@
-【注意事项】
-------------------------------------
-1. 请到海康威视官网下载最新版本ISUP SDK：https://open.hikvision.com/download/5cda567cf47ae80dd41a54b3?type=10&id=18e1e779efed4593bfceba6703d7f6a8
-
-2. Windows开发，将“库文件”文件夹中的HCNetSDK.dll、HCCore.dll、HCNetSDKCom文件夹、libssl-1_1-x64.dll、libcrypto-1_1-x64.dll、hlog.dll、hpr.dll、zlib1.dll等文件拷贝到该文件夹下，HCNetSDKCom文件夹（包含里面的功能组件dll库文件）需要和HCNetSDK.dll、HCCore.dll一起加载，放在同一个目录下，且HCNetSDKCom文件夹名不能修改。如果自行开发软件不能正常实现相应功能，而且程序没有指定加载的dll库路径，请在程序运行的情况下尝试删除HCNetSDK.dll。如果可以删除，说明程序可能调用到系统盘Windows->System32目录下的dll文件，建议删除或者更新该目录下的相关dll文件；如果不能删除，dll文件右键选择属性确认SDK库版本。
