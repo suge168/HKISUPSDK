@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FCSearchDescription xmlns="http://www.isapi.org/ver20/XMLSchema" version="2.0">
+    <!--req, object, 最早在进行人脸检索时, attr:version{req, string, 协议版本}-->
+    <searchID>
+        <!--req, string, 搜索记录唯一标识, desc:用来确认上层客户端是否为同一个(倘若是同一个,则设备记录内存,下次搜索加快速度)-->test
+    </searchID>
+    <searchResultPosition>
+        <!--req, int, 查询结果在结果列表中的起始位置, desc:当记录条数很多时, 一次查询不能获取所有的记录, 下一次查询时指定位置可以查询后面的记录-->1
+    </searchResultPosition>
+    <maxResults>
+        <!--req, int, 本次查询(每页显示)最大记录数-->1
+    </maxResults>
+    <snapStartTime>
+        <!--opt, datetime, ISO8601 time;抓拍图片的开始时间-->1970-01-01T00:00:00+08:00
+    </snapStartTime>
+    <snapEndTime>
+        <!--opt, datetime, ISO8601 time;抓拍图片的结束时间-->1970-01-01T00:00:00+08:00
+    </snapEndTime>
+    <faceMatchInfoEnable>
+        <!--opt, bool, 表示是否需要只上传有匹配信息的数据-->true
+    </faceMatchInfoEnable>
+    <monitorName>
+        <!--opt, string, 监控点名称-->test
+    </monitorName>
+    <similarity>
+        <!--opt, float, 相似度, range:[0.0,100.0]-->0.0
+    </similarity>
+    <eventType>
+        <!--opt, enum, 事件类型, subType:string, [unlimit#不限,faceContrast#人脸比对成功,whiteFaceContrast#授权名单人脸比对（即陌生人报警）,faceCapture#图片抓拍,faceContrastFailure#人脸比对失败,faceMonitor#人脸布防], desc:最早在进行人脸检索时，由于记录的是人脸比对成功事件，则经常出现重复的人脸信息（例如：一张抓拍图与多个人脸库图进行比对，导致同一抓拍图有多个结果），-->unlimit
+    </eventType>
+    <FaceModeList>
+        <!--opt, array, 人脸模型信息列表, subType:object-->
+        <FaceMode>
+            <!--opt, object, 人脸模型信息-->
+            <ModeInfo>
+                <!--opt, object, 模型信息-->
+                <similarity>
+                    <!--opt, float, 相似度, range:[0.0,100.0]-->0.0
+                </similarity>
+                <modeData>
+                    <!--opt, string, 目标模型数据, desc:传输过程中针对二进制非建模数据进行base64的加密处理-->test
+                </modeData>
+            </ModeInfo>
+        </FaceMode>
+    </FaceModeList>
+    <PictureInfoList>
+        <!--opt, array, 图片信息列表, subType:object, desc:按图片检索时添加-->
+        <PictureInfo>
+            <!--opt, object, 图片信息-->
+            <FDID>
+                <!--req, string, 人脸比对库唯一标示ID-->test
+            </FDID>
+            <PID>
+                <!--req, string, 图片数据对应的ID值-->test
+            </PID>
+        </PictureInfo>
+    </PictureInfoList>
+    <ChannelList>
+        <!--opt, array, 查询通道列表, subType:object-->
+        <Channel>
+            <!--opt, object, 查询通道-->
+            <channelID>
+                <!--req, int, 通道号-->1
+            </channelID>
+        </Channel>
+    </ChannelList>
+    <totalSearchResults>
+        <!--opt, int, 单次搜索总数, desc:限制设备当搜索条件很低时无限制搜索，避免性能过高消耗。超脑设备此值默认为10000，当超过10000时仍然按照10000处理，不报错（范晶晶3修改）-->1
+    </totalSearchResults>
+    <FDIDList>
+        <!--opt, array, 人脸库列表, subType:object-->
+        <FDID>
+            <!--opt, string, 人脸库ID-->test
+        </FDID>
+    </FDIDList>
+    <sortord>
+        <!--opt, enum, 返回结果排序, subType:string, [similarity#按相似度排序,time#按时间排序]-->similarity
+    </sortord>
+    <sex>
+        <!--opt, enum, 性别, subType:string, [male#男,female#女], desc:选项互斥 不限制==不下发该节点-->male
+    </sex>
+    <glass>
+        <!--opt, enum, 是否戴眼镜, subType:string, [yes#是,no#否], desc:选项互斥 不限制==不下发该节点-->yes
+    </glass>
+    <smile>
+        <!--opt, enum, 是否微笑, subType:string, [yes#是,no#否], desc:选项互斥 不限制==不下发该节点-->yes
+    </smile>
+    <high_risk_group>
+        <!--opt, enum, 是否高危人群镜, subType:string, [yes#是,no#否], desc:选项互斥 不限制==不下发该节点-->yes
+    </high_risk_group>
+    <importLib>
+        <!--opt, enum, 是否导入库, subType:string, [yes#是,no#否], desc:选项互斥 不限制==不下发该节点-->yes
+    </importLib>
+    <CustomFaceLibIDList>
+        <!--opt, array, 自定义人脸库ID列表, subType:object-->
+        <customFaceLibID>
+            <!--opt, string, 自定义人脸库ID-->test
+        </customFaceLibID>
+    </CustomFaceLibIDList>
+    <thermometryUnit>
+        <!--opt, enum, 测温单位, subType:string, [celsius#摄氏度,fahrenheit#华氏度,kelvin#开尔文]-->celsius
+    </thermometryUnit>
+    <currTemperature>
+        <!--opt, float, 人脸温度, range:[-20.0,105.0], unit:℃, unitType:温度, desc:与thermometryUnit测温单位配合使用-->36.7
+    </currTemperature>
+    <temperatureCondition>
+        <!--opt, enum, 人脸测温温度状况, subType:string, [normal#正常,abnormal#异常,all#全部,above#温度高于], desc:温度高于用于指定高于具体温度值搜索，温度值参数temperatureValue-->normal
+    </temperatureCondition>
+    <temperatureValue>
+        <!--opt, float, 温度值, range:[-20,105], unit:℃, unitType:温度, dep:and,{$.FCSearchDescription.temperatureCondition,eq,above}-->37.2
+    </temperatureValue>
+    <humanIDList>
+        <!--opt, array, 人员ID列表, subType:object, desc:支持按具体人员ID搜索,与返回结果中的human_id一致，表示唯一的人员ID。可通过/ISAPI/Intelligent/FDLib/FDSearch接口返回报文中的humanId获取-->
+        <humanID>
+            <!--req, string, 人员ID, desc:支持按具体人员ID搜索,与返回结果中的human_id一致，表示唯一的人员ID。可通过/ISAPI/Intelligent/FDLib/FDSearch接口返回报文中的humanId获取-->test
+        </humanID>
+    </humanIDList>
+</FCSearchDescription>

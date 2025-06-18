@@ -1,0 +1,9 @@
+<?xml version: "1.0" encoding="UTF-8"?>
+<CreateFDLibList>
+    <CreateFDLib>
+        <id>1</id>
+        <name>${name}</name>
+        <thresholdValue>${thresholdValue}</thresholdValue>
+        <customInfo/>
+    </CreateFDLib>
+</CreateFDLibList>

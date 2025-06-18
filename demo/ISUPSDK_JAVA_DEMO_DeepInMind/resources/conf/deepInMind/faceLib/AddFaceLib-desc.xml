@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CreateFDLibList xmlns="http://www.isapi.org/ver20/XMLSchema" version="2.0">
+    <!--opt, array, 创建人脸库信息列表, subType:object, attr:version{req, string, 协议版本}-->
+    <CreateFDLib>
+        <!--opt, object, 创建人脸库-->
+        <id>
+            <!--opt, int, 表示list中子项个数;从1开始赋值;依次增加, range:[1,15]-->1
+        </id>
+        <name>
+            <!--req, string, 人脸库名称, range:[1,64]-->faceLib1
+        </name>
+        <thresholdValue>
+            <!--opt, int, 检测阈值, range:[0,100]-->50
+        </thresholdValue>
+        <customInfo>
+            <!--opt, string, 人脸库附加信息, range:[1,128]-->test
+        </customInfo>
+    </CreateFDLib>
+</CreateFDLibList>
