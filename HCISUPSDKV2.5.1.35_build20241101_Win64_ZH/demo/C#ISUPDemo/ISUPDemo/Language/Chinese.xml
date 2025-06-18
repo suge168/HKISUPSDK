@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ISUPDemo Language="Chinese">
+  <UserControl>
+    <Name>DeviceLogList</Name>
+    <Controls>
+      <Control name="时间" text="时间"/>
+      <Control name="设备信息" text="设备信息"/>
+      <Control name="报警信息" text="报警信息"/>
+      <Control name="时间" text="时间"/>
+      <Control name="状态" text="状态"/>
+      <Control name="操作" text="操作"/>
+      <Control name="设备信息" text="设备信息"/>
+      <Control name="错误" text="错误"/>
+    </Controls>
+  </UserControl>
+  <UserControl>
+    <Name>AudioTalk</Name>
+    <Controls>
+      <Control name="AudioTalkGoup" text="语音对讲"/>
+      <Control name="label1" text="通道"/>
+      <Control name="groupBox1" text="CMS"/>
+      <Control name="label2" text="回调类型"/>
+      <Control name="btnCMSStartTalk" text="开始语音对讲"/>
+      <Control name="btnCMSStopTalk" text="停止语音对讲"/>
+    </Controls>
+  </UserControl>
+</ISUPDemo>

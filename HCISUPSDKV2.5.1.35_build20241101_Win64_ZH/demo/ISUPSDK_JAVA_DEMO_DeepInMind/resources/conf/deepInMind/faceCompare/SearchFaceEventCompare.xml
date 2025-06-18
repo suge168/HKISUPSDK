@@ -1,0 +1,8 @@
+<?xml version: "1.0" encoding="utf-8"?>
+<FCSearchDescription>
+    <searchID>068C1FE5-F03B-4A86-8B07-F1EE8DB4AAAF</searchID>
+    <snapStartTime>${snapStartTime}</snapStartTime>
+    <snapEndTime>${snapStartTime}</snapEndTime>
+    <maxResults>${maxResults}</maxResults>
+    <searchResultPosition>${searchResultPosition}</searchResultPosition>
+</FCSearchDescription>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FDSearchDescription xmlns="http://www.isapi.org/ver20/XMLSchema" version="2.0">
+    <!--opt, object, 查询描述, attr:version{req, string, 协议版本}-->
+    <searchID>
+        <!--req, string, 搜索记录唯一标识, desc:用来确认上层客户端是否为同一个(倘若是同一个,则设备记录内存,下次搜索加快速度)-->test
+    </searchID>
+    <searchResultPosition>
+        <!--req, int, 查询结果在结果列表中的起始位置, desc:当记录条数很多时, 一次查询不能获取所有的记录, 下一次查询时指定位置可以查询后面的记录-->1
+    </searchResultPosition>
+    <maxResults>
+        <!--req, int, 本次查询(每页显示)最大记录数-->1
+    </maxResults>
+    <FDID>
+        <!--opt, string, 人脸比对库唯一标示ID-->test
+    </FDID>
+    <startTime>
+        <!--opt, date, 人脸库人员出生开始时间-->1970-01-01+08:00
+    </startTime>
+    <endTime>
+        <!--opt, date, 人脸库人员出生结束时间-->1970-01-01+08:00
+    </endTime>
+    <name>
+        <!--req, string, 姓名, range:[1,32]-->test
+    </name>
+    <sex>
+        <!--opt, enum, 性别, subType:string, [male#男,female#女]-->male
+    </sex>
+    <province>
+        <!--opt, string, 省份, desc:参考《全国各省份城市列表.txt》-->11
+    </province>
+    <city>
+        <!--opt, string, 城市, desc:参考《全国各省份城市列表.txt》-->11
+    </city>
+    <certificateType>
+        <!--opt, enum, 证件类型, subType:string, [officerID#军官证,ID#身份证,passportID#护照,other#其他]-->officerID
+    </certificateType>
+    <certificateNumber>
+        <!--opt, string, 证件号, range:[8,32], desc:当certificateType为officerID时，certificateNumber长度范围[8,18]；当certificateType为ID时，certificateNumber长度范围[8,18]；当certificateType为passportID时，certificateNumber长度范围[8,32]；当certificateType为other时，certificateNumber长度范围[8,18]；-->test
+    </certificateNumber>
+    <phoneNumber>
+        <!--opt, string, 电话号码, range:[1,64]-->test
+    </phoneNumber>
+    <FaceModeList>
+        <!--opt, array, 人脸模型信息列表, subType:object-->
+        <FaceMode>
+            <!--opt, object, 人脸模型-->
+            <ModeInfo>
+                <!--opt, object, 模型数据, desc:<ModeInfo>字段必填-->
+                <similarity>
+                    <!--opt, float, 相似度, range:[0.0,100.0]-->0.0
+                </similarity>
+                <modeData>
+                    <!--opt, string, 目标模型数据, desc:传输过程中针对二进制非建模数据进行base64的加密处理-->test
+                </modeData>
+            </ModeInfo>
+        </FaceMode>
+    </FaceModeList>
+    <modelStatus>
+        <!--opt, enum, 建模状态（旧）, subType:string, [modeling#已建模,unmodeled#未建模,modelingFailed#建模失败]-->modeling
+    </modelStatus>
+    <modelingStatus>
+        <!--opt, enum, 建模状态, subType:string, [success#success,failed#failed,none#none], desc:success-建模成功,failed-建模失败,none-尚未建模；支持复选；后续使用这个字段,modelStatus将会去除-->success
+    </modelingStatus>
+    <customFaceLibID>
+        <!--opt, string, 自定义人脸库ID, desc:当FDID和customFaceLibID同时存在时，以customFaceLibID为准-->test
+    </customFaceLibID>
+    <sortord>
+        <!--opt, enum, 搜索结果排序类型, subType:string, [time#入库时间,contrastSuccessTime#比对成功时间,count#比对成功次数]-->time
+    </sortord>
+    <order>
+        <!--opt, enum, 搜索结果排序方式, subType:string, [DESC#最晚入库最先展示,ASC#最早入库最先展示], desc:默认:DESC-->DESC
+    </order>
+    <OccurrencesInfo>
+        <!--opt, object, 频次信息-->
+        <enabled>
+            <!--req, bool, 频次是否返回-->true
+        </enabled>
+        <occurrences>
+            <!--opt, int, 频次, desc:达到最低频次的人脸库图片才返回,当enabled为true时必须存在-->1
+        </occurrences>
+        <occurrencesSearchType>
+            <!--opt, enum, 频次检索方式, subType:string, [greaterThanOrEqual#大于等于,lessThan#小于,equal#等于], desc:当enabled为true时必须存在-->greaterThanOrEqual
+        </occurrencesSearchType>
+    </OccurrencesInfo>
+    <faceScore>
+        <!--opt, int, 人脸评分, range:[-1,100], desc:-1表示评分未知（未对该人脸评分）-->1
+    </faceScore>
+    <FDIDList>
+        <!--opt, object, 人脸库列表, desc:支持查询多个人脸库搜索,理论上FDID和FDIDList是互斥的，若用户同时下发，则以FDIDList为准-->
+        <FDID>
+            <!--req, string, 人脸库ID, range:[1,64]-->test
+        </FDID>
+    </FDIDList>
+    <faceScoreMax>
+        <!--opt, int, 人脸评分范围最大值, range:[-1,100], desc:有效值[0-100],-1表示评分未知（未对该人脸评分）,该节点可以和faceScore组合，此时faceScore表示该范围最小值，faceScore表示该范围最大值，如果单独使用,则最小值为0-->0
+    </faceScoreMax>
+    <pictureStatus>
+        <!--opt, enum, 人脸图片状态, subType:string, [normal#正常人脸,abnormal#异常人脸],
+    desc:异常人脸（建模失败+人脸评分为低+图片url下载失败的）,
+        Note:此搜索结果是设备根据当前算法识别效果提供的评判标准,异常图片可能影响图片抓拍和比对的效果,如果为异常图片的,建议更换图片，后期随着算法准确率的提提升,此判断标准可能发生变化，因此此判断标准结果仅供参考，-->normal
+    </pictureStatus>
+    <importStartTime>
+        <!--opt, datetime, 入库开始时间-->1970-01-01T00:00:00+08:00
+    </importStartTime>
+    <importEndTime>
+        <!--opt, datetime, 入库结束时间-->1970-01-01T00:00:00+08:00
+    </importEndTime>
+    <faceContrastSuccessStartTime>
+        <!--opt, datetime, 人脸比对成功开始时间, desc:支持确认某段时间内监控场景有哪些人出现过。配合使用的查询条件：人脸库ID(FDID，包括：动态库、允许库、静态库)、排序类型（sortord）、排序顺序（order）-->1970-01-01T00:00:00+08:00
+    </faceContrastSuccessStartTime>
+    <faceContrastSuccessEndTime>
+        <!--opt, datetime, 人脸比对成功结束时间, desc:支持确认某段时间内监控场景有哪些人出现过。配合使用的查询条件：人脸库ID(FDID，包括：动态库，允许库、静态库)、排序类型（sortord）、排序顺序（order）-->1970-01-01T00:00:00+08:00
+    </faceContrastSuccessEndTime>
+    <userType>
+        <!--opt, enum, 人员类型, subType:string, [normal#普通人,visitor#访客]-->normal
+    </userType>
+    <associatedPlateType>
+        <!--opt, enum, 关联车牌类型, subType:string, [greenChannel#绿色通道车牌,normal#普通], desc:默认无特殊类型,适用于安检人车核验一体机产品进行人车核验时使用-->greenChannel
+    </associatedPlateType>
+</FDSearchDescription>

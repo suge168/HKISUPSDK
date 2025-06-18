@@ -1,0 +1,32 @@
+The COM:HCCoreBase ver is 1.0.0.2, 2019_07_24. Async:1.
+version:HCISUPAlarm version is 2.5.1.35, 2024_11_01.
+[2025-06-17 22:32:11.522][ERR] CCoreGlobalCtrlBase::LoadDSo, HPR_LoadDSo Failed, dwDll[3], Path[zlib1.dll] syserror[126]
+[2025-06-17 22:32:11.523][ERR] LoadZlib, LoadDSo Failed, syserror[0]
+[2025-06-17 22:32:11.523][DBG] CMemoryMgr::AllocMemoryPoolByIndex, CMemoryMgr[0x7E52CF20], MemPoolIndex[1], MemPool[0x7E5363A0], dwChunkSize[32]
+[2025-06-17 22:32:11.524][DBG] CMemoryMgr::CreateMemoryPool, nIndex[7], dwChunkSize[246312], nOnceAlloc[16], nMaxAlloc[20480]
+[2025-06-17 22:32:11.524][DBG] CServerLinkMgr::CServerLinkMgr, CreateMemoryPool SUCC, MemPoolIndex[7]
+[2025-06-17 22:32:11.524][DBG] CMemoryMgr::AllocMemoryPoolByIndex, CMemoryMgr[0x7E52CF20], MemPoolIndex[7], MemPool[0x7E536F20], dwChunkSize[246312]
+[2025-06-17 22:32:11.524][DBG] CMemoryMgr::AllocMemoryPoolByIndex, CMemoryMgr[0x7E52CF20], MemPoolIndex[0], MemPool[0x7E537120], dwChunkSize[16]
+[2025-06-17 22:32:11.534][DBG] CCoreGlobalCtrlBase::LoadDSo, HPR_LoadDSo Succ, Path[D:\NEW\HK\ISUPSDK_PYTHON_DEMO_BASE\lib\libeay32.dll], hHandleRet[-234946560]
+[2025-06-17 22:32:11.539][DBG] CCoreGlobalCtrlBase::LoadDSo, HPR_LoadDSo Succ, Path[D:\NEW\HK\ISUPSDK_PYTHON_DEMO_BASE\lib\ssleay32.dll], hHandleRet[-9633792]
+[2025-06-17 22:32:11.541][DBG] COpenSSLAPI::GetOpenSSLVersion, m_fnSSLeayVersion, OpensslVersion[OpenSSL 1.0.2t  10 Sep 2019]
+[2025-06-17 22:32:11.541][DBG] COpenSSLAPI::LoadAPI, m_dwOpenSSLVeresion[0x10002032]
+[2025-06-17 22:32:11.541][DBG] COpenSSLAPI::IsAllAPILoaded, Function[OpenSSL_version] Unload
+[2025-06-17 22:32:11.541][DBG] CSSLTrans::LoadSSLLib, Not All Function Loaded
+[2025-06-17 22:32:11.554][DBG] OpenSSL: SSLeay Version[OpenSSL 1.0.2t  10 Sep 2019]
+[2025-06-17 22:32:11.554][INF] CSSLTrans::SSLCtxInit, dwSSLVersion[0], m_fnClientMethodV23
+[2025-06-17 22:32:11.723][DBG] [0]CAlarmListenBase::CreateServerLink, CoreBase_CreateServerLink, iLinkHandle[0], Addr[192.168.0.71:7663], byProtocolType[2]
+[2025-06-17 22:32:11.723][DBG] [0]CAlarmListenBase::Start, SUCC, Addr[192.168.0.71:7663], byProtocolType[2]
+[2025-06-17 22:32:11.723][DBG] NET_EALARM_StartListen, SUCC, Addr[192.168.0.71:7663], iListenHandle[0], byProtocolType[2]
+[2025-06-17 22:39:58.029][ERR] [1]CServerLinkTCP::ListenProcess, Accept Rate[0]/s, dwAcceptCount[1]
+[2025-06-17 22:39:58.029][DBG] [1]CServerLinkTCP::ListenProcess, HPR_Accept, socket[1624], iLinkIndex[0]
+[2025-06-17 22:39:58.054][DBG] CMemoryMgr::CreateMemoryPool, nIndex[8], dwChunkSize[33624], nOnceAlloc[128], nMaxAlloc[40960]
+[2025-06-17 22:39:58.054][DBG] CMqttServerMgr::CMqttServerMgr, CreateMemoryPool SUCC, MemPoolIndex[8]
+[2025-06-17 22:39:58.056][DBG] CMemoryMgr::AllocMemoryPoolByIndex, CMemoryMgr[0x7E52CF20], MemPoolIndex[8], MemPool[0x35D0E60], dwChunkSize[33624]
+[2025-06-17 22:39:58.056][DBG] CMemoryMgr::AllocMemoryPoolByIndex, CMemoryMgr[0x7E52CF20], MemPoolIndex[2], MemPool[0x35D1B60], dwChunkSize[128]
+[2025-06-17 22:39:58.057][DBG] CMemoryMgr::AllocMemoryPoolByIndex, CMemoryMgr[0x7E52CF20], MemPoolIndex[5], MemPool[0x35D0960], dwChunkSize[1560]
+[2025-06-17 22:39:58.058][DBG] CAsyncManager::CreateHandle, SUCC, iHandle[0], pObject[0x3838544]
+[2025-06-17 22:39:58.058][DBG] [0x3838544]CLinkAsyncIO::Start, SUCC, m_socketAsyncIO[1624], m_bCmdAsync[0], m_iAsyncHandle[0]
+[2025-06-17 22:39:58.058][DBG] [0]CMqttServerSession::Start, SUCC, Addr[192.168.1.245:58538], socket[1624], m_LongCtrl[0x672405C]
+[2025-06-17 22:39:58.058][INF] [0]CMqttServerSession::ParserConnectData, Addr[192.168.1.245:0], UserName[FA8213717], wKeepAlive[30]
+[2025-06-17 22:39:58.059][DBG] CEhome50DevManager::SetDevSessionID, DeviceID[FA8213717], iServerID[0], iSessionID[0]
